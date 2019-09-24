@@ -74,9 +74,10 @@ public func routes(_ router: Router) throws {
       return Acronym.query(on: req)
         .sort(\.short, .ascending)
         .all()
-    }
-    
+    }    
 
     let acronymsController = AcronymsController()
     try router.register(collection: acronymsController)
+    let usersController = UsersController()
+    try router.register(collection: usersController)
 }
